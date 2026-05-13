@@ -1,0 +1,23 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: saas-tienda
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/saas_tienda}
+    username: ${SPRING_DATASOURCE_USERNAME:saas_tienda}
+    password: ${SPRING_DATASOURCE_PASSWORD:cambia_esta_contrasena}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+
+app:
+  cors-origins: ${SAAS_TIENDA_CORS_ORIGINS:*}
+  impresora-termica: ${SAAS_TIENDA_IMPRESORA_TERMICA:}
